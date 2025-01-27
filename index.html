@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gestão de Atividades</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Sistema de Gestão de Atividades</h1>
+    <nav class="navbar">
+      <a href="#" onclick="navigate('home')">Home</a>
+      <a href="#" onclick="navigate('atividades')">Atividades</a>
+      <a href="#" onclick="navigate('participantes')">Participantes</a>
+      <a href="#" onclick="navigate('relatorios')">Relatórios</a>
+      <a href="#" onclick="navigate('configuracoes')">Configurações</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <!-- Página de Login -->
+    <section id="login" class="page active">
+      <h2>Bem-vindo ao Sistema de Gestão de Atividades!</h2>
+      <p>Aqui você pode gerenciar e acompanhar todas as atividades do Centro Comunitário São Mateus com facilidade.</p>
+      <div class="login-box">
+        <h3>Login</h3>
+        <form onsubmit="authenticate(event)">
+          <label for="username">Usuário:</label>
+          <input type="text" id="username" name="username" required>
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password" required>
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Página Home -->
+<section id="home" class="page">
+        <h2>Home</h2>
+        <p>Bem-vindo ao painel principal do sistema. Aqui você pode navegar pelas opções disponíveis.</p>
+
+    <section id="instituicao">
+        <h3>Sobre o Centro Comunitário São Mateus</h3>
+        <p>O Centro Comunitário São Mateus é uma instituição que visa promover o bem-estar e a integração social da comunidade local, oferecendo atividades culturais, educativas e recreativas para todas as idades. Nosso objetivo é criar um ambiente de acolhimento, aprendizado e desenvolvimento pessoal, além de fortalecer os laços comunitários.</p>
+        <section id="atividade">
+            <h3>Atividades Oferecidas</h3>
+            <ul>
+                <li><strong>Aula de Música:</strong> Aprenda a tocar instrumentos e desenvolva suas habilidades musicais.</li>
+                <li><strong>Aula de Dança:</strong> Venha se divertir enquanto aprende diferentes estilos de dança.</li>
+                <li><strong>Aula de Teatro:</strong> Explore o mundo da interpretação e desenvolva sua criatividade.</li>
+                <li><strong>Aula de Artesanato:</strong> Aprenda técnicas de artesanato e crie peças incríveis.</li>
+            </ul>
+        </section>
+    </section>
+</section>
+
+<!-- Página Atividades -->
+<section id="atividades" class="page">
+    <h2>Atividades</h2>
+    <p>Veja aqui as atividades disponíveis, atualize informações ou adicione novas atividades.</p>
+  
+    <!-- Botão para exibir/ocultar a interface -->
+    <button id="toggle-aulas-btn" onclick="toggleAulasInterface()">Agendar Dias de Aulas</button>
+  
+    <!-- Interface de Agendamento de Aulas -->
+    <div id="aulas-container" class="aulas-container hidden">
+      <h3>Agendar Dias de Aulas</h3>
+      <form id="aulas-form" onsubmit="addAula(event)">
+        <label for="data-aula">Data da Aula:</label>
+        <input type="date" id="data-aula" required>
+        <label for="descricao-aula">Descrição:</label>
+        <input type="text" id="descricao-aula" placeholder="Ex.: Aula de música" required>
+        <button type="submit">Adicionar Aula</button>
+      </form>
+  
+      <h4>Aulas Agendadas:</h4>
+      <ul id="lista-aulas">
+        <!-- As aulas adicionadas aparecerão aqui -->
+      </ul>
+    </div>
+  </section>  
+
+<!-- Página Participantes -->
+<section id="participantes" class="page">
+    <h2>Participantes</h2>
+    <p>Gerencie os participantes registrados no sistema.</p>
+  
+    <!-- Botão para exibir/ocultar a interface -->
+    <button id="toggle-participantes-btn" onclick="toggleParticipantesInterface()">Adicionar Participantes</button>
+  
+    <!-- Interface de Adicionar Participantes -->
+    <div id="participantes-container" class="participantes-container hidden">
+      <h3>Adicionar Novo Participante</h3>
+      <form id="participantes-form" onsubmit="addParticipante(event)">
+        <label for="nome-participante">Nome:</label>
+        <input type="text" id="nome-participante" placeholder="Ex.: João Silva" required>
+  
+        <label for="idade-participante">Idade:</label>
+        <input type="number" id="idade-participante" placeholder="Ex.: 25" min="0" required>
+  
+        <label for="cpf-participante">CPF:</label>
+        <input type="text" id="cpf-participante" placeholder="Ex.: 123.456.789-10" required>
+  
+        <label for="aula-participante">Aula:</label>
+        <select id="aula-participante" required>
+          <option value="" disabled selected>Selecione uma aula</option>
+          <option value="Música">Música</option>
+          <option value="Dança">Dança</option>
+          <option value="Teatro">Teatro</option>
+          <option value="Artesanato">Artesanato</option>
+        </select>
+  
+        <button type="submit">Adicionar Participante</button>
+      </form>
+  
+      <h4>Lista de Participantes:</h4>
+      <ul id="lista-participantes">
+        <!-- Os participantes adicionados aparecerão aqui -->
+      </ul>
+    </div>
+  </section>
+
+   <!-- Página Relatórios -->
+<section id="relatorios" class="page">
+    <h2>Relatórios</h2>
+    <p>Crie, visualize e gerencie relatórios diretamente no sistema.</p>
+  
+    <!-- Interface de criação de relatórios -->
+    <div id="relatorio-container">
+      <h3>Criar Relatório</h3>
+      <form id="relatorio-form" onsubmit="criarRelatorio(event)">
+        <label for="tipo-relatorio">Tipo de Relatório:</label>
+        <select id="tipo-relatorio" required>
+          <option value="" disabled selected>Selecione o tipo de relatório</option>
+          <option value="Relatório do Dia">Relatório do Dia</option>
+          <option value="Relatório da Semana">Relatório da Semana</option>
+        </select>
+  
+        <label for="conteudo-relatorio">Conteúdo do Relatório:</label>
+        <textarea id="conteudo-relatorio" rows="10" placeholder="Digite o conteúdo do relatório aqui..." required></textarea>
+  
+        <button type="submit">Salvar Relatório</button>
+      </form>
+    </div>
+  
+    <!-- Interface para exibição de relatórios salvos -->
+    <div id="relatorios-salvos-container" style="margin-top: 40px;">
+      <h3>Relatórios Salvos</h3>
+      <div id="lista-relatorios"></div>
+    </div>
+  </section>
+  
+    <!-- Página Configurações -->
+    <section id="configuracoes" class="page">
+      <h2>Configurações</h2>
+      <p>Altere as configurações do sistema para atender melhor às suas necessidades.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      Centro Comunitário São Mateus | Igreja Católica São Mateus<br>
+      <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
