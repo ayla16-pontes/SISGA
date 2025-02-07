@@ -21,7 +21,7 @@ function authenticate(event) {
 function navigate(pageId) {
   if (!isAuthenticated) {
     alert("Por favor, faça login primeiro!");
-    showPage('login');
+    showPage('inicio');
     return;
   }
   showPage(pageId);

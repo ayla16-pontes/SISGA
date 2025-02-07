@@ -1,301 +1,314 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .header {
-    background-color: #0056b3;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
-  }
-  
-  .navbar a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .navbar a:hover {
-    text-decoration: underline;
-  }
-  
-  .main {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .login-box {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 5px;
-    margin: 20px auto;
-    width: 300px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .login-box h3 {
-    margin-bottom: 15px;
-  }
-  
-  .login-box label {
-    display: block;
-    margin-bottom: 5px;
-    text-align: left;
-  }
-  
-  .login-box input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .login-box button {
-    width: 100%;
-    padding: 10px;
-    background-color: #0056b3;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .login-box button:hover {
-    background-color: #00408d;
-  }
-  
-  .footer {
-    background-color: #0056b3;
-    color: #fff;
-    text-align: center;
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-  
-  .footer a {
-    color: #fff;
-    text-decoration: underline;
-  }
-  
-  .page {
-    display: none;
-  }
-  
-  .page.active {
-    display: block;
-  }
-  .hidden {
-    display: none;
-  }
-  #instituicao {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  }
-  
-  #instituicao h3 {
-    margin-bottom: 10px;
-  }
-  
-  #instituicao p {
-    font-size: 16px;
-    line-height: 1.6;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-  .aulas-container {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  
-  .aulas-container h3 {
-    margin-bottom: 10px;
-  }
-  
-  #aulas-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  #aulas-form input,
-  #aulas-form button {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  #aulas-form button {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-  }
-  
-  #aulas-form button:hover {
-    background-color: #0056b3;
-  }
-  
-  #lista-aulas {
-    margin-top: 15px;
-    padding: 0;
-    list-style: none;
-  }
-  
-  #lista-aulas li {
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #ffffff;
-  }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
 
-  #atividade ul {
-    list-style-type: none; /* Remove os pontos de lista */
-    padding-left: 0; /* Remove o espaçamento da esquerda */
-  }
-  
-  #atividade li {
-    margin-bottom: 10px; /* Adiciona um espaçamento entre os itens */
-  }
+.header {
+  background-color: #0056b3;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+}
 
-  .participantes-container {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  
-  .participantes-container h3 {
-    margin-bottom: 10px;
-  }
-  
-  #participantes-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  #participantes-form input,
-  #participantes-form button {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  #participantes-form button {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-  }
-  
-  #participantes-form button:hover {
-    background-color: #0056b3;
-  }
-  
-  #lista-participantes {
-    margin-top: 15px;
-    padding: 0;
-    list-style: none;
-  }
-  
-  #lista-participantes li {
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #ffffff;
-  }
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
 
-  #relatorio-container {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  
-  #relatorio-container h3 {
-    margin-bottom: 10px;
-  }
-  
-  #relatorio-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  #relatorio-form select,
-  #relatorio-form textarea,
-  #relatorio-form button {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  #relatorio-form textarea {
-    resize: none;
-  }
-  
-  #relatorio-form button {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    align-self: flex-start;
-  }
-  
-  #relatorio-form button:hover {
-    background-color: #0056b3;
-  }
-  
-  #relatorios-salvos-container {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  
-  #lista-relatorios {
-    margin-top: 15px;
-  }
-  
-  .relatorio-item {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f3f3f3;
-  }
-  
-  .relatorio-item h4 {
-    margin-bottom: 5px;
-  }
-  
-  .relatorio-item p {
-    margin: 0;
-    white-space: pre-wrap;
-  }
-  
-  
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.main {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.login-box {
+  background-color: #edeff1;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px auto;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.288);
+}
+
+.login-box h3 {
+  margin-bottom: 15px;
+}
+
+.login-box label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background-color: #00408d;
+}
+
+#inicio h2,
+#login h2,
+#home h2,
+#instituicao h3,
+#atividades h2,
+#participantes h2,
+#relatorios h2,
+#configuracoes h2 {
+  padding: 9px;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+#instituicao {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+#instituicao h3 {
+  margin-bottom: 10px;
+}
+
+#instituicao p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.aulas-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.aulas-container h3 {
+  margin-bottom: 10px;
+}
+
+#aulas-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+#aulas-form button,
+#atividades button, 
+#participantes button, 
+#relatorios button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  margin: 9px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#aulas-form button:hover {
+  background-color: #0056b3;
+}
+
+#lista-aulas {
+  margin-top: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+#lista-aulas li {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+#atividade ul {
+  list-style-type: none;
+  /* Remove os pontos de lista */
+  padding-left: 0;
+  /* Remove o espaçamento da esquerda */
+}
+
+#atividade li {
+  margin-bottom: 10px;
+  /* Adiciona um espaçamento entre os itens */
+}
+
+.participantes-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.participantes-container h3 {
+  margin-bottom: 10px;
+}
+
+#participantes-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#participantes-form input,
+#participantes-form button {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#participantes-form button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+#participantes-form button:hover {
+  background-color: #0056b3;
+}
+
+#lista-participantes {
+  margin-top: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+#lista-participantes li {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #ffffff;
+  flex-direction: column;
+}
+
+#relatorio-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+#relatorio-container h3 {
+  margin-bottom: 10px;
+}
+
+#relatorio-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#relatorio-form select,
+#relatorio-form textarea,
+#relatorio-form button {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#relatorio-form textarea {
+  resize: none;
+}
+
+#relatorio-form button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+#relatorio-form button:hover {
+  background-color: #0056b3;
+}
+
+#relatorios-salvos-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+#lista-relatorios {
+  margin-top: 15px;
+}
+
+.relatorio-item {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f3f3f3;
+}
+
+.relatorio-item h4 {
+  margin-bottom: 5px;
+}
+
+.relatorio-item p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.footer {
+  background-color: #0056b3;
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+.footer a {
+  color: #fff;
+  text-decoration: underline;
+} 

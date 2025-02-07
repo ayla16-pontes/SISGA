@@ -20,7 +20,7 @@
 
   <main class="main">
     <!-- Página de Login -->
-    <section id="login" class="page active">
+    <section id="inicio" class="titulo-flex page active">
       <h2>Bem-vindo ao Sistema de Gestão de Atividades!</h2>
       <p>Aqui você pode gerenciar e acompanhar todas as atividades do Centro Comunitário São Mateus com facilidade.</p>
       <div class="login-box">
@@ -42,7 +42,10 @@
 
     <section id="instituicao">
         <h3>Sobre o Centro Comunitário São Mateus</h3>
-        <p>O Centro Comunitário São Mateus é uma instituição que visa promover o bem-estar e a integração social da comunidade local, oferecendo atividades culturais, educativas e recreativas para todas as idades. Nosso objetivo é criar um ambiente de acolhimento, aprendizado e desenvolvimento pessoal, além de fortalecer os laços comunitários.</p>
+        <p>O Centro Comunitário São Mateus é uma instituição que visa promover o bem-estar e a
+        integração social da comunidade local, oferecendo atividades culturais, educativas e 
+        recreativas para todas as idades. Nosso objetivo é criar um ambiente de acolhimento, 
+        aprendizado e desenvolvimento pessoal, além de fortalecer os laços comunitários.</p>
         <section id="atividade">
             <h3>Atividades Oferecidas</h3>
             <ul>
@@ -59,21 +62,20 @@
 <section id="atividades" class="page">
     <h2>Atividades</h2>
     <p>Veja aqui as atividades disponíveis, atualize informações ou adicione novas atividades.</p>
-  
     <!-- Botão para exibir/ocultar a interface -->
     <button id="toggle-aulas-btn" onclick="toggleAulasInterface()">Agendar Dias de Aulas</button>
   
     <!-- Interface de Agendamento de Aulas -->
-    <div id="aulas-container" class="aulas-container hidden">
+    <div id="aulas-container" class="button aulas-container hidden">
       <h3>Agendar Dias de Aulas</h3>
       <form id="aulas-form" onsubmit="addAula(event)">
-        <label for="data-aula">Data da Aula:</label>
+        <label for="data-aula" >Data da Aula:</label>
         <input type="date" id="data-aula" required>
         <label for="descricao-aula">Descrição:</label>
         <input type="text" id="descricao-aula" placeholder="Ex.: Aula de música" required>
         <button type="submit">Adicionar Aula</button>
       </form>
-  
+
       <h4>Aulas Agendadas:</h4>
       <ul id="lista-aulas">
         <!-- As aulas adicionadas aparecerão aqui -->
@@ -110,7 +112,6 @@
           <option value="Teatro">Teatro</option>
           <option value="Artesanato">Artesanato</option>
         </select>
-  
         <button type="submit">Adicionar Participante</button>
       </form>
   
@@ -139,7 +140,6 @@
   
         <label for="conteudo-relatorio">Conteúdo do Relatório:</label>
         <textarea id="conteudo-relatorio" rows="10" placeholder="Digite o conteúdo do relatório aqui..." required></textarea>
-  
         <button type="submit">Salvar Relatório</button>
       </form>
     </div>
