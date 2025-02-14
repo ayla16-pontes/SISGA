@@ -1,30 +1,32 @@
 // Variável de controle para verificar se o usuário está autenticado
 let isAuthenticated = false;
 
-// Função para autenticar o usuário
 function authenticate(event) {
-  event.preventDefault(); // Evita o reload da página
+  event.preventDefault(); // Evita o recarregamento da página
+
+  // Simulação de login bem-sucedido
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  // Simula uma validação de login (adicione lógica real conforme necessário)
+  // Verificação simples (substitua pela sua lógica de autenticação)
   if (username === "admin" && password === "1234") {
-    isAuthenticated = true;
-    alert("Login realizado com sucesso!");
-    showPage('home');
+    alert('Login bem-sucedido!');
+    navigate('home'); // Navega para a página inicial
+    document.querySelector('.menu-toggle').classList.remove('hidden'); // Mostra o botão
   } else {
-    alert("Usuário ou senha incorretos!");
+    alert('Usuário ou senha incorretos!');
   }
 }
 
 // Função para mostrar páginas e verificar autenticação
-function navigate(pageId) {
-  if (!isAuthenticated) {
-    alert("Por favor, faça login primeiro!");
-    showPage('inicio');
-    return;
-  }
-  showPage(pageId);
+function navigate(section) {
+  // Esconde todas as seções
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.remove('active');
+  });
+
+  // Mostra a seção desejada
+  document.getElementById(section).classList.add('active');
 }
 
 // Função para alternar entre páginas
@@ -180,6 +182,19 @@ function removerRelatorio(index) {
   relatorios.splice(index, 1); // Remove o relatório do array
   exibirRelatorios(); // Atualiza a exibição
 }
+
+function toggleMenu() {
+  const navbar = document.querySelector('.navbar');
+  navbar.classList.toggle('active');
+}
+
+// Adicione um evento de clique para fechar o menu ao clicar em um link
+document.querySelectorAll('.navbar a').forEach(link => {
+  link.addEventListener('click', () => {
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.remove('active'); // Fecha o menu ao clicar em um link
+  });
+});
 
 
   

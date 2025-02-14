@@ -31,7 +31,6 @@ body {
   text-decoration: none;
 }
 
-
 .main {
   flex: 1;
   padding: 20px;
@@ -312,3 +311,62 @@ body {
   color: #fff;
   text-decoration: underline;
 } 
+
+.menu-toggle {
+  display: none;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Estilos para telas menores que 600px */
+@media (max-width: 600px) {
+  .header {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 10px 20px 10px; /* Ajuste o padding-bottom conforme necessário */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Garante que o menu seja posicionado em relação ao header */
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .menu-toggle {
+    display: block; /* Mostra o botão em telas pequenas */
+  }
+  
+  .navbar {
+    display: none; /* Esconde o menu por padrão */
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%; /* Ocupa toda a largura */
+    background-color: #00408d; /* Cor de fundo do menu */
+    padding: 10px 0; /* Espaçamento interno */
+    position: absolute;
+    top: 100%; /* Ajuste conforme a altura do header */
+    left: 0; /* Alinha o menu à esquerda */
+    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+  }
+
+  .navbar.active {
+    display: flex; /* Mostra o menu quando ativo */
+  }
+
+  .navbar a {
+    width: 100%; /* Faz os links ocuparem toda a largura */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px; /* Espaçamento interno */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linha divisória */
+  }
+
+  .navbar a:last-child {
+    border-bottom: none; /* Remove a borda do último link */
+  }
+}
