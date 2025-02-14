@@ -8,11 +8,11 @@ function authenticate(event) {
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  // Verificação simples (substitua pela sua lógica de autenticação)
+  // Verificação simples 
   if (username === "admin" && password === "1234") {
     alert('Login bem-sucedido!');
     navigate('home'); // Navega para a página inicial
-    document.querySelector('.menu-toggle').classList.remove('hidden'); // Mostra o botão
+    document.querySelector('.menu-toggle').classList.remove('hidden'); 
   } else {
     alert('Usuário ou senha incorretos!');
   }
@@ -20,7 +20,6 @@ function authenticate(event) {
 
 // Função para mostrar páginas e verificar autenticação
 function navigate(section) {
-  // Esconde todas as seções
   document.querySelectorAll('.page').forEach(page => {
     page.classList.remove('active');
   });
@@ -58,7 +57,7 @@ function toggleAulasInterface() {
   
   // Função para adicionar uma aula à lista
   function addAula(event) {
-    event.preventDefault(); // Evita o recarregamento da página
+    event.preventDefault(); 
   
     // Obtém os valores do formulário
     const dataAula = document.getElementById('data-aula').value;
@@ -141,7 +140,6 @@ function criarRelatorio(event) {
     return;
   }
 
-  // Salva o relatório no array
   const novoRelatorio = {
     tipo: tipoRelatorio,
     conteudo: conteudoRelatorio,
@@ -149,10 +147,8 @@ function criarRelatorio(event) {
   };
   relatorios.push(novoRelatorio);
 
-  // Atualiza a exibição dos relatórios salvos
   exibirRelatorios();
 
-  // Limpa o formulário após salvar
   document.getElementById('tipo-relatorio').value = '';
   document.getElementById('conteudo-relatorio').value = '';
 }
@@ -179,8 +175,8 @@ function exibirRelatorios() {
 
 // Função para remover um relatório
 function removerRelatorio(index) {
-  relatorios.splice(index, 1); // Remove o relatório do array
-  exibirRelatorios(); // Atualiza a exibição
+  relatorios.splice(index, 1);
+  exibirRelatorios();
 }
 
 function toggleMenu() {
